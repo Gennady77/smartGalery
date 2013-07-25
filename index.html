@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        
+        <script type="text/javascript" src="js/lib/jquery-2.0.0.js"></script>
+        <script type="text/javascript" src="js/lib/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+        
+        <script type="text/javascript" src="js/Galery.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.play').on('mouseenter', function(e) {
+                    $(e.currentTarget).animate({
+                        width: 600,
+                        height: '100%',
+                        left: '40%'
+                    }, {
+                        duration: 500,
+                        queue: false,
+                        complete: function() {
+                            $('.play div .inner').animate({
+                                right: '-3em',
+                                height: '150%',
+                                width: '3em',
+                                opacity: 1
+                            }, {
+                                duration: 500
+                            });
+                        }
+                    });
+                });
+                $('html').on('click', function(e) {
+                    $('.play').animate({
+                        width: 180,
+                        height: 180
+                    }, {
+                        duration: 100
+                    });
+                    $('.play div .inner').animate({
+                        height: '100%',
+                        width: 0,
+                        right: 0,
+                        opacity: 0
+                    }, {
+                        duration: 100
+                    });
+                });
+            });
+        </script>
+        
+    </head>
+    <body>
+        <div class="play">
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                    <td align="center">
+                        <div><span class="inner"></span></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
